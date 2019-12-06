@@ -1,12 +1,10 @@
 import { Injectable } from "@angular/core";
 import { Names } from "./names";
-import {Observable} from "rxjs/Observable";
-import { of } from 'rxjs';
-import { from } from 'rxjs/observable/from';
+import { Observable } from "rxjs/Rx"
+import { of } from "rxjs";
 
 @Injectable()
 export class DatenServiceService {
-  
   namesObs$: Observable<Names[]>;
   names: Names[] = [{ vn: "lisa" }, { vn: "jutta" }];
 
@@ -25,8 +23,13 @@ export class DatenServiceService {
     return this.names;
   }
 
-  getDataObs(): Observable<string>[] {
+  getDataObs() { //}: Observable<Names[]> {
     console.log("### getDataObs");
     return of(this.names);
   }
+
+  getDataPromise() { 
+    console.log("### getDataProm");
+    return of(this.names).toPromise();
+  }  
 }
