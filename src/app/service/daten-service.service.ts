@@ -11,7 +11,7 @@ export class DatenServiceService {
   names: Names[] = [{ vn: "lisa" }, { vn: "jutta" }];
 
   constructor() {
-    console.log("###init DatenServiceService");
+    console.log("##init DatenServiceService");
   }
 
   getData(): string {
